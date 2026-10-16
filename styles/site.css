@@ -257,35 +257,27 @@ footer p + p { margin: 0; }
 .v-text a { font-size: .85rem; color: var(--green); margin-top: .3rem; }
 @media (max-width: 760px) { .video-list { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; } .videos-head { padding-block: 2.5rem 2rem; } }
 
-/* Hero: three playable clips over the art panel */
-.hero-clips { position: absolute; inset: 1.4rem; z-index: 1; display: grid; align-content: center; gap: 1.1rem; }
-.hero-clip { margin: 0; background: var(--paper); padding: .45rem; box-shadow: 0 10px 28px rgba(25, 57, 46, .18); min-width: 0; }
-.hero-clip:nth-child(1) { margin-right: 30%; }
-.hero-clip:nth-child(2) { margin-left: 16%; }
-.hero-clip:nth-child(3) { margin-right: 8%; }
-.hero-clip video { display: block; width: 100%; max-width: 100%; aspect-ratio: 1280 / 678; background: #1e2622; }
-.hero-clip figcaption { display: flex; justify-content: space-between; gap: .8rem; font-size: .78rem; line-height: 1.4; padding: .45rem .15rem .1rem; color: var(--ink); }
+/* Hero: three clips, same size, one column */
+.hero { align-items: center; }
+.hero-media { min-width: 0; }
+.hero-clips { display: grid; gap: 1.1rem; width: 100%; max-width: 400px; margin-left: auto; }
+.hero-clip { margin: 0; min-width: 0; }
+.hero-clip video { display: block; width: 100%; max-width: 100%; aspect-ratio: 1280 / 678; background: #1e2622; border: 1px solid var(--line); }
+.hero-clip figcaption { display: flex; justify-content: space-between; gap: .8rem; font-size: .8rem; line-height: 1.4; padding-top: .4rem; color: var(--ink); }
 .hero-clip figcaption span:last-child { color: var(--copper); font-variant-numeric: tabular-nums; flex-shrink: 0; }
 
-/* Approach: practice examples */
+/* Approach: learn and practice side by side */
 .approach-audience { margin-top: 1rem; font-size: .9rem; color: #c2cbbd; }
-.practice-title { margin-top: 4rem; }
-.practice-intro { color: #dde2d8; margin-top: .8rem; max-width: 70ch; }
-.practice-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem 1.6rem; margin-top: 2rem; }
-.practice-group { display: grid; gap: 1.4rem; align-content: start; min-width: 0; }
-.practice-label { color: #d3ba95; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 650; padding-bottom: .6rem; border-bottom: 1px solid #597466; }
+.approach-cols { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 4rem; align-items: start; }
+.learn-col .learning-grid { grid-template-columns: minmax(0, 1fr); }
+.practice-intro { color: #dde2d8; margin-top: .8rem; max-width: 62ch; font-size: .95rem; }
+.practice-grid { display: grid; gap: 2rem; margin-top: 1.5rem; }
+.practice-group { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem 1.2rem; align-items: start; min-width: 0; }
+.practice-label { grid-column: 1 / -1; color: #d3ba95; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 650; padding-bottom: .5rem; border-bottom: 1px solid #597466; }
 .practice-group figure { margin: 0; min-width: 0; }
 .practice-group img { display: block; width: 100%; max-width: 100%; aspect-ratio: 1280 / 651; object-fit: cover; background: #19392e; }
-.practice-group figcaption { margin-top: .6rem; font-size: .85rem; line-height: 1.5; color: #dde2d8; }
-.practice-group figcaption strong { display: block; color: var(--paper); font-weight: 600; font-size: .95rem; }
-@media (max-width: 1100px) { .practice-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 900px) {
-  .hero { grid-template-columns: minmax(0, 1fr); }
-  .hero-art { min-height: 0; }
-  .hero-clips { position: relative; inset: auto; padding: 1.4rem; }
-}
-@media (max-width: 680px) {
-  .hero-art svg { height: 100%; top: 0; right: 0; }
-  .hero-clip:nth-child(n) { margin: 0; }
-  .practice-grid { grid-template-columns: minmax(0, 1fr); }
-}
+.practice-group figcaption { margin-top: .5rem; font-size: .82rem; line-height: 1.5; color: #dde2d8; }
+.practice-group figcaption strong { display: block; color: var(--paper); font-weight: 600; font-size: .92rem; }
+@media (max-width: 1000px) { .approach-cols { grid-template-columns: minmax(0, 1fr); gap: 3rem; } }
+@media (max-width: 900px) { .hero { grid-template-columns: minmax(0, 1fr); } .hero-clips { margin-left: 0; max-width: 520px; } }
+@media (max-width: 520px) { .practice-group { grid-template-columns: minmax(0, 1fr); } }

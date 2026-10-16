@@ -120,6 +120,11 @@ window.CONF.event = {
         "label": "Agenda"
       },
       {
+        "id": "videos",
+        "label": "Videos",
+        "href": "videos.html"
+      },
+      {
         "id": "speakers",
         "label": "Speakers"
       },
@@ -135,11 +140,6 @@ window.CONF.event = {
         "id": "talk",
         "label": "From the stage",
         "href": "stage.html"
-      },
-      {
-        "id": "videos",
-        "label": "Videos",
-        "href": "videos.html"
       }
     ],
     "audienceLine": "Built for landscape architects, architects, planners, designers, visualization professionals, educators, firm owners, and practice leaders.",
