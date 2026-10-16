@@ -162,6 +162,11 @@ window.CONF.event = {
         "id": "talk",
         "label": "From the stage",
         "href": "stage.html"
+      },
+      {
+        "id": "videos",
+        "label": "Videos",
+        "href": "videos.html"
       }
     ]
   }
