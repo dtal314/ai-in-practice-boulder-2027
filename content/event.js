@@ -142,6 +142,21 @@ window.CONF.event = {
     "practiceIntro": "Real examples from Daniel and Jenn’s work, shown at ASLA National 2026. Each one is covered in a Boulder session.",
     "heroClips": [
       {
+        "id": "tandem",
+        "label": "Human + AI, working in tandem",
+        "length": "0:27"
+      },
+      {
+        "id": "labor",
+        "label": "AI and labor: The Economist and the UN",
+        "length": "1:05"
+      },
+      {
+        "id": "custom-tools",
+        "label": "Custom tools from our own workflows",
+        "length": "0:54"
+      },
+      {
         "id": "drone",
         "label": "Google Earth to drone aerial",
         "length": "0:41"
@@ -158,6 +173,23 @@ window.CONF.event = {
       }
     ],
     "examples": [
+      {
+        "group": "Human + AI workflow",
+        "items": [
+          {
+            "img": "ex-workflow-coding",
+            "title": "Coding is now about human review",
+            "caption": "People define the feature, test it, and approve the release. AI builds the scaffolding and drafts the code.",
+            "alt": "Five-step diagram: human defines the feature, AI builds scaffolding and drafts code, human tests, AI and human refine and ship"
+          },
+          {
+            "img": "ex-workflow-chapter",
+            "title": "From script to presentation to book chapter",
+            "caption": "ChatGPT writes the script, Claude Design builds the deck, a person records the talk, ChatGPT drafts the chapter, and a person edits it.",
+            "alt": "Five-step diagram from a ChatGPT script to a Claude Design deck, a recorded talk, a ChatGPT chapter draft, and human edits"
+          }
+        ]
+      },
       {
         "group": "Renders",
         "items": [

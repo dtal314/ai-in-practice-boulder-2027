@@ -86,6 +86,12 @@ window.CONF.sessions = [
     "status": "proposed",
     "clips": [
       {
+        "id": "tandem",
+        "label": "Human + AI, working in tandem",
+        "speaker": "Daniel Tal",
+        "length": "0:27"
+      },
+      {
         "id": "scaffolding",
         "label": "AI builds the scaffolding, people make it their own",
         "speaker": "Daniel Tal",
@@ -288,6 +294,12 @@ window.CONF.sessions = [
     "status": "proposed",
     "clips": [
       {
+        "id": "custom-tools",
+        "label": "Custom tools from our own workflows",
+        "speaker": "Daniel Tal",
+        "length": "0:54"
+      },
+      {
         "id": "citizen-dev",
         "label": "English is the new coding language",
         "speaker": "Daniel Tal",
@@ -396,6 +408,12 @@ window.CONF.sessions = [
     "outcomesStatus": "draft",
     "status": "proposed",
     "clips": [
+      {
+        "id": "labor",
+        "label": "AI and labor: The Economist and the UN",
+        "speaker": "Daniel Tal",
+        "length": "1:05"
+      },
       {
         "id": "roadmap",
         "label": "Find your person, and don't expect a return yet",
