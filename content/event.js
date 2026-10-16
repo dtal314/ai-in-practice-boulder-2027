@@ -60,36 +60,9 @@ window.CONF.event = {
     "audience": "For people doing the work and people leading the practice. Whether you are trying AI for the first time or deciding how to introduce it across a team, the program moves from accessible fundamentals to more advanced applications and business decisions.",
     "audienceList": "Landscape architects, architects, planners, designers, visualization professionals, educators, firm owners, and practice leaders.",
     "approachTitle": "Our approach",
-    "talk": {
-      "eyebrow": "Preview · ASLA National Conference 2026",
-      "title": "See the program before you come.",
-      "body": "Daniel Tal, Jenn Becker, and Kelly Curl presented AI in Professional Practice at the 2026 ASLA National Conference. The Boulder program grows out of that talk. Start with one minute of it, then watch the highlights.",
-      "clip": {
-        "id": "adapters",
-        "label": "We are not adopters. We are adapters.",
-        "speaker": "Daniel Tal",
-        "length": "0:35"
-      },
-      "quotes": [
-        {
-          "text": "AI is not replacing what we’re doing. AI is helping us build the scaffolding.",
-          "who": "Daniel Tal"
-        },
-        {
-          "text": "The most important part of using AI is having the knowledge behind what you’re asking it to do, to actually understand if the output’s correct.",
-          "who": "Jenn Becker"
-        },
-        {
-          "text": "AI should expand design thinking, not replace it.",
-          "who": "Kelly Curl"
-        }
-      ],
-      "cta": "Watch the talk highlights",
-      "href": "stage.html"
-    },
     "clipSource": "From the ASLA 2026 talk",
     "approachLead": "Start simply. Build context. Test the result. Keep people accountable.",
-    "approachBody": "Sessions connect demonstrations to the professional judgment needed to use the output. Case studies should show the task, inputs, process, result, review, and limitations—not just a polished final image.",
+    "approachBody": "Sessions connect demonstrations to the professional judgment needed to use the output. Every example shows the task, the inputs, the process, the result, the review, and the limits, not just a polished final image.",
     "agendaTitle": "The draft agenda",
     "agendaIntro": "All times are local to Boulder. Times include demonstrations, questions, and transitions. Session titles, speaker assignments, and abstracts are draft proposals, not representations of speaker-approved content.",
     "speakersTitle": "Organizers & proposed speakers.",
@@ -139,8 +112,8 @@ window.CONF.event = {
     "bioPending": "Bio forthcoming",
     "nav": [
       {
-        "id": "overview",
-        "label": "Overview"
+        "id": "approach",
+        "label": "Approach"
       },
       {
         "id": "agenda",
@@ -167,6 +140,96 @@ window.CONF.event = {
         "id": "videos",
         "label": "Videos",
         "href": "videos.html"
+      }
+    ],
+    "audienceLine": "Built for landscape architects, architects, planners, designers, visualization professionals, educators, firm owners, and practice leaders.",
+    "practiceTitle": "What it looks like in practice",
+    "practiceIntro": "Real examples from Daniel and Jenn’s work, shown at ASLA National 2026. Each one is covered in a Boulder session.",
+    "heroClips": [
+      {
+        "id": "drone",
+        "label": "Google Earth to drone aerial",
+        "length": "0:41"
+      },
+      {
+        "id": "central-park",
+        "label": "Central Park modeled from a prompt",
+        "length": "1:03"
+      },
+      {
+        "id": "terrain",
+        "label": "A grading tool built by prompting",
+        "length": "0:39"
+      }
+    ],
+    "examples": [
+      {
+        "group": "Renders",
+        "items": [
+          {
+            "img": "ex-drone",
+            "title": "Google Earth to drone aerial",
+            "caption": "A Google Earth capture turned into a drone-style aerial for a proposal.",
+            "alt": "Google Earth capture beside the AI drone-style aerial made from it"
+          },
+          {
+            "img": "ex-massing",
+            "title": "Massing to concept aerial",
+            "caption": "Simple SketchUp massing rendered into an illustrative aerial for a client to react to.",
+            "alt": "White massing model beside an AI-rendered aerial of the same blocks"
+          }
+        ]
+      },
+      {
+        "group": "3D models",
+        "items": [
+          {
+            "img": "ex-central-park",
+            "title": "Central Park from one prompt",
+            "caption": "An editable model with topography and surrounding buildings, built in about 40 minutes.",
+            "alt": "AI-built 3D model of Central Park and the Manhattan skyline"
+          },
+          {
+            "img": "ex-piazza",
+            "title": "A street wall from photos",
+            "caption": "Building facades modeled in SketchUp from a few reference photos.",
+            "alt": "AI-built SketchUp model of a row of brick and stucco facades"
+          }
+        ]
+      },
+      {
+        "group": "Custom software",
+        "items": [
+          {
+            "img": "ex-grading",
+            "title": "Grading tool",
+            "caption": "Grades a path to a set slope and places retaining walls where the slope demands them.",
+            "alt": "SketchUp grading tool showing a graded path with red retaining walls on green terrain"
+          },
+          {
+            "img": "ex-parking",
+            "title": "Parametric parking",
+            "caption": "Draw a boundary, set the rules, and the tool lays out stalls, islands, and lights.",
+            "alt": "SketchUp parking layout tool with its settings dialog open over a site plan"
+          }
+        ]
+      },
+      {
+        "group": "Research and writing",
+        "items": [
+          {
+            "img": "ex-research",
+            "title": "Prompt to sourced guide",
+            "caption": "A one-paragraph prompt turned into a researched design guide for a mixed-use site.",
+            "alt": "A short research prompt beside the long research guide it produced"
+          },
+          {
+            "img": "ex-chapter",
+            "title": "Talk to draft chapter",
+            "caption": "A recorded talk and its transcript became a 3,000-word draft chapter, then a full round of human edits.",
+            "alt": "Draft book chapter pages with tracked changes in red and green"
+          }
+        ]
       }
     ]
   }
