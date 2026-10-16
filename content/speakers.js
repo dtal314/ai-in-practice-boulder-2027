@@ -28,7 +28,7 @@ window.CONF.speakers = [
     "shortName": "Kelly Curl",
     "initials": "KC",
     "displayRole": "Proposed speaker · AI in academia",
-    "bio": "Bio forthcoming",
+    "bio": "Associate professor of landscape architecture at Colorado State University, where she has taught for 16 years, after practicing with PWP on the West Coast. She presented AI work from her summer field studio with Daniel and Jenn at ASLA National 2026.",
     "participationStatus": "proposed"
   },
   {

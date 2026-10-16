@@ -33,13 +33,21 @@ window.CONF.sessions = [
       "Recognize uncertainty and plausible errors."
     ],
     "outcomesStatus": "draft",
-    "status": "proposed"
+    "status": "proposed",
+    "clips": [
+      {
+        "id": "llm",
+        "label": "What a large language model actually is",
+        "speaker": "Daniel Tal and Jenn Becker",
+        "length": "1:11"
+      }
+    ]
   },
   {
     "id": "S02",
     "day": 1,
     "start": "10:00",
-    "end": "10:45",
+    "end": "10:30",
     "kind": "session",
     "title": "Choosing your tools: Chat, deep research, and evidence",
     "speakerIds": [
@@ -57,20 +65,10 @@ window.CONF.sessions = [
     "status": "proposed"
   },
   {
-    "id": "break-1",
-    "day": 1,
-    "start": "10:45",
-    "end": "11:00",
-    "kind": "break",
-    "title": "Break",
-    "speakerIds": [],
-    "status": "proposed"
-  },
-  {
     "id": "S03",
     "day": 1,
-    "start": "11:00",
-    "end": "11:45",
+    "start": "10:30",
+    "end": "11:00",
     "kind": "session",
     "title": "Research, writing, and proposals: From question to reviewed draft",
     "speakerIds": [
@@ -85,33 +83,65 @@ window.CONF.sessions = [
       "Adapt a draft to a real audience and project."
     ],
     "outcomesStatus": "draft",
+    "status": "proposed",
+    "clips": [
+      {
+        "id": "scaffolding",
+        "label": "AI builds the scaffolding, people make it their own",
+        "speaker": "Daniel Tal",
+        "length": "0:46"
+      }
+    ]
+  },
+  {
+    "id": "break-1",
+    "day": 1,
+    "start": "11:00",
+    "end": "11:15",
+    "kind": "break",
+    "title": "Break",
+    "speakerIds": [],
     "status": "proposed"
   },
   {
     "id": "S04",
     "day": 1,
-    "start": "11:45",
-    "end": "12:30",
+    "start": "11:15",
+    "end": "12:00",
     "kind": "session",
-    "title": "2D visualization and rendering: Directing and evaluating images",
+    "title": "Generative design, part 1: Image prompting for concepts and renderings",
     "speakerIds": [
       "jenn"
     ],
     "level": "Beginner to intermediate",
-    "abstract": "Explore image generation, image editing, and rendering support through a professional design lens. Explain how reference material and constraints guide a result, and how to identify changes that undermine design intent or accuracy.",
+    "abstract": "Turn sketches, massing models, Google Earth captures, and draft renderings into client-ready imagery. Build a detailed image prompt with AI, use segmentation to keep design intent, and compare each iteration against what the design actually is.",
     "outcomes": [
-      "Frame an image task.",
-      "Compare iterations against intent.",
-      "Distinguish conceptual imagery from verified project information."
+      "Write an image prompt that tells the story of the design.",
+      "Use AI to draft and refine prompts for an image model.",
+      "Separate conceptual imagery from verified project information."
     ],
     "outcomesStatus": "draft",
-    "status": "proposed"
+    "status": "proposed",
+    "clips": [
+      {
+        "id": "image-prompts",
+        "label": "Use AI to talk to AI: prompting a rendering",
+        "speaker": "Jenn Becker",
+        "length": "0:58"
+      },
+      {
+        "id": "drone",
+        "label": "A drone shot from a Google Earth image",
+        "speaker": "Jenn Becker",
+        "length": "0:41"
+      }
+    ]
   },
   {
     "id": "lunch",
     "day": 1,
-    "start": "12:30",
-    "end": "13:15",
+    "start": "12:00",
+    "end": "12:45",
     "kind": "meal",
     "title": "Included lunch and conversation",
     "speakerIds": [],
@@ -121,29 +151,80 @@ window.CONF.sessions = [
   {
     "id": "S05",
     "day": 1,
-    "start": "13:15",
-    "end": "14:00",
+    "start": "12:45",
+    "end": "13:15",
     "kind": "session",
-    "title": "3D modeling and visualization: Connecting AI to a production workflow",
+    "title": "Generative design, part 2: Video prompting and AI animation",
     "speakerIds": [
-      "daniel",
       "jenn"
     ],
-    "level": "Intermediate; accessible demonstration",
-    "abstract": "Examine where AI can assist a workflow involving geometry, site information, modeling, and rendering. Trace a simple example into a more complex case and make the necessary review of scale, geometry, context, and deliverables visible.",
+    "level": "Intermediate",
+    "abstract": "Chain a massing model, diagrams, and AI key frames into a short animation. Storyboard the sequence, prompt each transition, and judge where a fast AI animation can stand in for a full rendering pass and where it cannot.",
     "outcomes": [
-      "Identify useful points of assistance.",
-      "Distinguish imagery from usable model data.",
-      "Define checks before downstream use."
+      "Storyboard an animation from key frames.",
+      "Prompt transitions between frames.",
+      "Judge an AI animation against design intent and accuracy."
     ],
     "outcomesStatus": "draft",
-    "status": "proposed"
+    "status": "proposed",
+    "clips": [
+      {
+        "id": "animation",
+        "label": "From massing model to animation in key frames",
+        "speaker": "Jenn Becker",
+        "length": "0:56"
+      }
+    ]
   },
   {
     "id": "S06",
     "day": 1,
+    "start": "13:15",
+    "end": "14:00",
+    "kind": "session",
+    "title": "3D modeling with AI: From photo, sketch, and CAD to a working model",
+    "speakerIds": [
+      "daniel"
+    ],
+    "level": "Intermediate; accessible demonstration",
+    "abstract": "Watch current AI models build editable 3D models from a prompt, a photograph, a hand sketch, or a CAD file, then follow the review that has to happen next: scale, geometry, context, and whether the model is usable downstream.",
+    "outcomes": [
+      "Identify where AI can start or speed up a model.",
+      "Distinguish imagery from usable model data.",
+      "Define checks before a model goes into a deliverable."
+    ],
+    "outcomesStatus": "draft",
+    "status": "proposed",
+    "clips": [
+      {
+        "id": "central-park",
+        "label": "Central Park modeled in about 40 minutes",
+        "speaker": "Daniel Tal and Jenn Becker",
+        "length": "1:03"
+      },
+      {
+        "id": "vase",
+        "label": "Image to SketchUp model with a custom tool",
+        "speaker": "Daniel Tal",
+        "length": "0:54"
+      }
+    ]
+  },
+  {
+    "id": "break-2",
+    "day": 1,
     "start": "14:00",
-    "end": "14:45",
+    "end": "14:15",
+    "kind": "break",
+    "title": "Break",
+    "speakerIds": [],
+    "status": "proposed"
+  },
+  {
+    "id": "S07",
+    "day": 1,
+    "start": "14:15",
+    "end": "15:00",
     "kind": "session",
     "title": "Responsible practice: Firm policy, data, and human review",
     "speakerIds": [
@@ -158,20 +239,18 @@ window.CONF.sessions = [
       "Outline an acceptable-use policy."
     ],
     "outcomesStatus": "draft",
-    "status": "proposed"
+    "status": "proposed",
+    "clips": [
+      {
+        "id": "liability",
+        "label": "If you use AI, the liability is on you",
+        "speaker": "Jenn Becker",
+        "length": "0:42"
+      }
+    ]
   },
   {
-    "id": "break-2",
-    "day": 1,
-    "start": "14:45",
-    "end": "15:00",
-    "kind": "break",
-    "title": "Break",
-    "speakerIds": [],
-    "status": "proposed"
-  },
-  {
-    "id": "S07",
+    "id": "S08",
     "day": 1,
     "start": "15:00",
     "end": "15:30",
@@ -189,7 +268,7 @@ window.CONF.sessions = [
     "status": "proposed"
   },
   {
-    "id": "S08",
+    "id": "S09",
     "day": 1,
     "start": "15:30",
     "end": "16:00",
@@ -206,10 +285,24 @@ window.CONF.sessions = [
       "Recognize when code needs expert review."
     ],
     "outcomesStatus": "draft",
-    "status": "proposed"
+    "status": "proposed",
+    "clips": [
+      {
+        "id": "citizen-dev",
+        "label": "English is the new coding language",
+        "speaker": "Daniel Tal",
+        "length": "0:40"
+      },
+      {
+        "id": "terrain",
+        "label": "A custom grading tool built by prompting",
+        "speaker": "Daniel Tal",
+        "length": "0:39"
+      }
+    ]
   },
   {
-    "id": "S09",
+    "id": "S10",
     "day": 2,
     "start": "09:00",
     "end": "09:45",
@@ -219,17 +312,25 @@ window.CONF.sessions = [
       "kelly"
     ],
     "level": "All levels",
-    "abstract": "A proposed case study on AI in teaching and learning, connecting academic practice with the judgment students need in professional work. The specific course, project, methods, and findings will be supplied or approved by Kelly Curl.",
+    "abstract": "A case study from a four-week summer field studio where students kept AI at the center of the design process: field research and hand drawing first, AI to generate and test ideas, then final design by hand. Includes a proposed four-year path for AI literacy in a landscape architecture curriculum.",
     "outcomes": [
       "Examine an educational use case.",
       "Discuss assessment and authorship.",
       "Connect student learning with professional responsibility."
     ],
     "outcomesStatus": "proposed",
-    "status": "proposed"
+    "status": "proposed",
+    "clips": [
+      {
+        "id": "kelly",
+        "label": "Teach students where AI belongs in the design process",
+        "speaker": "Kelly Curl",
+        "length": "0:47"
+      }
+    ]
   },
   {
-    "id": "S10",
+    "id": "S11",
     "day": 2,
     "start": "09:45",
     "end": "10:30",
@@ -255,7 +356,7 @@ window.CONF.sessions = [
     "status": "proposed"
   },
   {
-    "id": "S11",
+    "id": "S12",
     "day": 2,
     "start": "10:45",
     "end": "11:30",
@@ -275,7 +376,7 @@ window.CONF.sessions = [
     "status": "proposed"
   },
   {
-    "id": "S12",
+    "id": "S13",
     "day": 2,
     "start": "11:30",
     "end": "12:00",
@@ -293,6 +394,14 @@ window.CONF.sessions = [
       "Connect adoption to staffing, fees, service quality, and client value."
     ],
     "outcomesStatus": "draft",
-    "status": "proposed"
+    "status": "proposed",
+    "clips": [
+      {
+        "id": "roadmap",
+        "label": "Find your person, and don't expect a return yet",
+        "speaker": "Daniel Tal",
+        "length": "0:40"
+      }
+    ]
   }
 ];

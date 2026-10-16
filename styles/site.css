@@ -187,3 +187,58 @@ footer p + p { margin: 0; }
   footer { flex-direction: column; gap: .4rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Talk clips (ASLA National 2026 excerpts) */
+.talk-clips { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 1.2rem; margin-top: 1.2rem; max-width: 760px; }
+.talk-clip { margin: 0; min-width: 0; }
+.talk-clip video { display: block; width: 100%; max-width: 100%; aspect-ratio: 1280 / 678; background: #1e2622; border: 1px solid var(--line); }
+.talk-clip figcaption { display: grid; gap: .15rem; margin-top: .55rem; font-size: .85rem; line-height: 1.45; }
+.clip-source { color: var(--copper); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 650; }
+.clip-label { font-weight: 600; color: var(--ink); }
+.clip-speaker { color: var(--muted); }
+.talk-band { background: var(--ink); color: var(--paper); padding-block: 5.5rem; }
+.talk-band .eyebrow { color: #d3ba95; }
+.talk-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 2.5rem 4rem; align-items: center; }
+.talk-copy p:not(.eyebrow) { color: #d7ddd5; margin-block: 1.4rem 2rem; max-width: 52ch; }
+.talk-band .button { background: var(--copper); border-color: var(--copper); }
+.talk-band .button:hover { background: #8d4729; }
+.talk-feature figcaption .clip-label, .talk-band .clip-label { color: var(--paper); }
+.talk-band .clip-speaker { color: #b9c2b9; }
+.talk-band .talk-clip video { border-color: #3d4a43; }
+.talk-quotes { grid-column: 1 / -1; list-style: none; margin: 1rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.talk-quotes li { border-top: 1px solid #4c5a52; padding-top: 1.2rem; min-width: 0; }
+.talk-quotes blockquote { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.15rem; line-height: 1.45; }
+.talk-quotes p { margin-top: .7rem; font-size: .85rem; color: #b9c2b9; }
+
+/* From the stage page */
+.stage-hero { padding-block: 4.5rem 3rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: 3rem; align-items: center; }
+.stage-hero h1 { font-size: clamp(3rem, 6vw, 5.6rem); max-width: 11ch; }
+.stage-hero .hero-subtitle { max-width: 28ch; }
+.stage-hero video { width: 100%; max-width: 100%; aspect-ratio: 1280 / 678; display: block; background: var(--soft); border: 1px solid var(--line); }
+.stage-meta { margin-top: 1.6rem; color: var(--muted); font-size: .95rem; }
+.stage-meta strong { color: var(--ink); font-weight: 600; }
+.chapter { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); gap: 2rem 4rem; padding-block: 4.5rem; border-top: 1px solid var(--line); scroll-margin-top: 7rem; }
+.chapter-num { font-family: Georgia, serif; color: var(--copper); font-size: 3rem; line-height: 1; display: block; margin-bottom: 1rem; }
+.chapter h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+.chapter-text p { color: var(--muted); max-width: 60ch; margin-top: 1.2rem; }
+.chapter-text ol { margin: 1.2rem 0 0; padding-left: 1.3rem; color: var(--ink); max-width: 60ch; }
+.chapter-text ol li { margin-block: .35rem; }
+.chapter-link { display: inline-block; margin-top: 1.4rem; font-size: .9rem; color: var(--green); }
+.chapter-media { display: grid; gap: 1.5rem; min-width: 0; }
+.chapter-media .talk-clips { margin-top: 0; max-width: none; }
+.stills { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 1rem; }
+.stills figure { margin: 0; min-width: 0; }
+.stills img { display: block; width: 100%; aspect-ratio: 1280 / 678; object-fit: cover; border: 1px solid var(--line); background: var(--soft); }
+.stills figcaption { font-size: .8rem; color: var(--muted); margin-top: .4rem; }
+.stage-cta { background: #e2e6da; padding-block: 4.5rem; text-align: center; }
+.stage-cta h2 { max-width: 20ch; margin: 0 auto 2rem; }
+.stage-note { font-size: .8rem; color: var(--muted); }
+@media (max-width: 900px) {
+  .talk-grid, .stage-hero, .chapter { grid-template-columns: minmax(0, 1fr); }
+  .talk-quotes { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; }
+}
+@media (max-width: 680px) {
+  .talk-band { padding-block: 3.5rem; }
+  .chapter { padding-block: 3rem; }
+  .stage-hero { padding-block: 2.5rem 2rem; }
+}

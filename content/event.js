@@ -21,7 +21,7 @@ window.CONF.event = {
   "days": [
     {
       "id": 1,
-      "title": "Foundations, workflows, and responsible practice",
+      "title": "Foundations, generative design, 3D modeling, and responsible practice",
       "start": "09:00",
       "end": "16:00"
     },
@@ -35,14 +35,15 @@ window.CONF.event = {
   "copy": {
     "banner": "Pre-draft · Preliminary program",
     "workingLabel": "Working title",
-    "heroBody": "Join Daniel Tal, Jenn Becker, and proposed guest presenters for two days of practical AI learning. Start with the fundamentals, explore real examples in research, writing, design, visualization, modeling, rendering, and coding, then examine how to bring AI into a firm responsibly.",
+    "heroBody": "Join Daniel Tal, Jenn Becker, and proposed guest presenters for two days of practical AI learning. Start with the fundamentals, explore real examples in research, writing, image and video prompting, 3D modeling, and coding, then examine how to bring AI into a firm responsibly.",
     "primaryCTA": "Explore the draft agenda",
     "secondaryCTA": "Meet the proposed speakers",
     "statusNote": "Preliminary program. Dates, venue, ticket pricing, and speaker participation will be confirmed before registration opens.",
     "overviewTitle": "Practical skills. Real examples. Better decisions.",
     "overview": [
       "AI is changing how professional work gets researched, communicated, designed, and delivered. This conference connects basic skills with the decisions that matter inside a real practice: choosing tools, checking results, protecting information, and deciding where automation is useful.",
-      "Daniel and Jenn will draw on their work in digital design, visualization, and AI education to connect everyday tasks with more complex workflows. Guest sessions will extend the discussion into academia, specialist applications, and advanced agents."
+      "Daniel and Jenn will draw on their work in digital design, visualization, and AI education to connect everyday tasks with more complex workflows. Guest sessions will extend the discussion into academia, specialist applications, and advanced agents.",
+      "Much of the program grows out of AI in Professional Practice, the session Daniel, Jenn, and Kelly Curl presented at the 2026 ASLA National Conference. Short clips from that talk appear with the agenda sessions they preview."
     ],
     "learningTitle": "What you will learn",
     "learning": [
@@ -50,7 +51,7 @@ window.CONF.event = {
       "Write a useful prompt and improve it through context, examples, constraints, and iteration.",
       "Compare AI tools by task, privacy needs, source quality, cost, and workflow fit.",
       "Use deeper research workflows and assess the evidence behind a response.",
-      "Apply AI to writing, proposals, 2D imagery, 3D workflows, modeling, rendering, and coding.",
+      "Apply AI to writing, proposals, image and video prompting, 3D modeling, rendering, and coding.",
       "Connect firm policy, responsible use, and human review to everyday practice.",
       "Examine the infrastructure, energy, and growth questions behind AI adoption.",
       "Understand agents and identify a practical first step toward firm implementation."
@@ -59,6 +60,34 @@ window.CONF.event = {
     "audience": "For people doing the work and people leading the practice. Whether you are trying AI for the first time or deciding how to introduce it across a team, the program moves from accessible fundamentals to more advanced applications and business decisions.",
     "audienceList": "Landscape architects, architects, planners, designers, visualization professionals, educators, firm owners, and practice leaders.",
     "approachTitle": "Our approach",
+    "talk": {
+      "eyebrow": "Preview · ASLA National Conference 2026",
+      "title": "See the program before you come.",
+      "body": "Daniel Tal, Jenn Becker, and Kelly Curl presented AI in Professional Practice at the 2026 ASLA National Conference. The Boulder program grows out of that talk. Start with one minute of it, then watch the highlights.",
+      "clip": {
+        "id": "adapters",
+        "label": "We are not adopters. We are adapters.",
+        "speaker": "Daniel Tal",
+        "length": "0:35"
+      },
+      "quotes": [
+        {
+          "text": "AI is not replacing what we’re doing. AI is helping us build the scaffolding.",
+          "who": "Daniel Tal"
+        },
+        {
+          "text": "The most important part of using AI is having the knowledge behind what you’re asking it to do, to actually understand if the output’s correct.",
+          "who": "Jenn Becker"
+        },
+        {
+          "text": "AI should expand design thinking, not replace it.",
+          "who": "Kelly Curl"
+        }
+      ],
+      "cta": "Watch the talk highlights",
+      "href": "stage.html"
+    },
+    "clipSource": "From the ASLA 2026 talk",
     "approachLead": "Start simply. Build context. Test the result. Keep people accountable.",
     "approachBody": "Sessions connect demonstrations to the professional judgment needed to use the output. Case studies should show the task, inputs, process, result, review, and limitations—not just a polished final image.",
     "agendaTitle": "The draft agenda",
@@ -128,6 +157,11 @@ window.CONF.event = {
       {
         "id": "faq",
         "label": "FAQ"
+      },
+      {
+        "id": "talk",
+        "label": "From the stage",
+        "href": "stage.html"
       }
     ]
   }
