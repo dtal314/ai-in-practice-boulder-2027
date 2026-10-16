@@ -135,11 +135,6 @@ window.CONF.event = {
       {
         "id": "faq",
         "label": "FAQ"
-      },
-      {
-        "id": "talk",
-        "label": "From the stage",
-        "href": "stage.html"
       }
     ],
     "audienceLine": "Built for landscape architects, architects, planners, designers, visualization professionals, educators, firm owners, and practice leaders.",
