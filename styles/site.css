@@ -281,3 +281,22 @@ footer p + p { margin: 0; }
 @media (max-width: 1000px) { .approach-cols { grid-template-columns: minmax(0, 1fr); gap: 3rem; } }
 @media (max-width: 900px) { .hero { grid-template-columns: minmax(0, 1fr); } .hero-clips { margin-left: 0; max-width: 520px; } }
 @media (max-width: 520px) { .practice-group { grid-template-columns: minmax(0, 1fr); } }
+
+/* Click-to-enlarge images */
+.zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; position: relative; }
+.zoom::after { content: "+"; position: absolute; right: .5rem; bottom: .5rem; width: 1.7rem; height: 1.7rem; display: grid; place-items: center; background: rgba(25, 57, 46, .85); color: #fff; font-size: 1.1rem; line-height: 1; opacity: .85; }
+.zoom:hover::after, .zoom:focus-visible::after { opacity: 1; background: var(--copper); }
+.lightbox { width: min(1400px, calc(100vw - 2rem)); max-width: none; max-height: calc(100vh - 2rem); padding: 0; border: 0; background: transparent; color: var(--paper); overflow: visible; }
+.lightbox::backdrop { background: rgba(18, 24, 21, .92); }
+.lightbox figure { margin: 0; display: grid; gap: .9rem; }
+.lightbox img { display: block; width: 100%; max-height: calc(100vh - 12rem); object-fit: contain; background: #111; }
+.lightbox figcaption { display: grid; gap: .25rem; max-width: 80ch; font-size: .95rem; line-height: 1.5; color: #dde2d8; }
+.lightbox .lb-group { color: #d3ba95; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 650; }
+.lightbox strong { color: #fff; font-size: 1.15rem; font-weight: 600; }
+.lightbox .lb-count { color: #9aa79f; font-size: .8rem; font-variant-numeric: tabular-nums; }
+.lb-close, .lb-nav { position: fixed; z-index: 2; border: 0; background: rgba(255, 255, 255, .12); color: #fff; width: 3rem; height: 3rem; font-size: 1.8rem; line-height: 1; cursor: pointer; }
+.lb-close:hover, .lb-nav:hover { background: var(--copper); }
+.lb-close { top: max(1rem, env(safe-area-inset-top, 0px)); right: max(1rem, env(safe-area-inset-right, 0px)); }
+.lb-prev { left: max(1rem, env(safe-area-inset-left, 0px)); top: 50%; transform: translateY(-50%); }
+.lb-next { right: max(1rem, env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%); }
+@media (max-width: 680px) { .lb-nav { top: auto; bottom: 1rem; transform: none; } .lightbox img { max-height: calc(100vh - 16rem); } }

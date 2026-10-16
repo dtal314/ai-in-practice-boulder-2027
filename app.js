@@ -45,7 +45,7 @@
     <header class="site-header"><div class="header-inner"><a class="brand" href="#top" aria-label="${esc(fullName)}">${esc(e.workingTitle)}<span>${esc(e.city)} ${e.year}</span></a><button class="menu-toggle" hidden aria-expanded="false" aria-controls="navigation">${esc(c.menu)} <span aria-hidden="true">☰</span></button><nav id="navigation" aria-label="${esc(c.navLabel)}">${c.nav.map(n => `<a href="${esc(n.href || '#' + n.id)}">${esc(n.label)}</a>`).join('')}</nav></div></header>
     <main id="main" tabindex="-1"><section class="hero wrap" id="top" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow">${esc(e.city)}, ${esc(e.state)} · ${e.year} · ${esc(e.dates ?? c.dateEyebrow)}</p><h1 id="hero-title">${esc(e.workingTitle)}</h1><p class="hero-subtitle">${esc(e.subtitle)}</p><p class="hero-body">${esc(c.heroBody)}</p><div class="hero-actions"><a class="button" href="#agenda">${esc(c.primaryCTA)} <span aria-hidden="true">↗</span></a><a class="text-link" href="#speakers">${esc(c.secondaryCTA)} <span aria-hidden="true">↗</span></a></div><p class="status-note">${esc(c.statusNote)}</p></div><div class="hero-media"><div class="hero-clips">${c.heroClips.map(k => `<figure class="hero-clip"><video controls preload="none" playsinline poster="media/hero-${esc(k.id)}.jpg"><source src="media/clip-${esc(k.id)}.mp4" type="video/mp4"></video><figcaption><span>${esc(k.label)}</span><span>${esc(k.length)}</span></figcaption></figure>`).join('')}</div></div></section>
     <div class="facts-strip"><div class="wrap">${[...e.days.map(d => `${c.day} ${d.id}: ${range(d)}`), capacity, meal].map(f => `<p>${esc(f)}</p>`).join('')}</div></div>
-    <section class="learning section" id="approach" aria-labelledby="approach-title"><div class="wrap"><p class="eyebrow">01 / ${esc(c.nav[0].label)}</p><div class="approach"><h2 id="approach-title">${esc(c.approachLead)}</h2><div><p>${esc(c.approachBody)}</p><p class="approach-audience">${esc(c.audienceLine)}</p></div></div><div class="approach-cols"><div class="learn-col"><h3>${esc(c.learningTitle)}</h3><ol class="learning-grid">${c.learning.map(o => `<li>${esc(o)}</li>`).join('')}</ol></div><div class="practice-col"><h3 class="practice-title">${esc(c.practiceTitle)}</h3><p class="practice-intro">${esc(c.practiceIntro)}</p><div class="practice-grid">${c.examples.map(g => `<div class="practice-group"><p class="practice-label">${esc(g.group)}</p>${g.items.map(i => `<figure><img src="media/${esc(i.img)}.jpg" alt="${esc(i.alt)}" loading="lazy"><figcaption><strong>${esc(i.title)}</strong> ${esc(i.caption)}</figcaption></figure>`).join('')}</div>`).join('')}</div></div></div></div></section>
+    <section class="learning section" id="approach" aria-labelledby="approach-title"><div class="wrap"><p class="eyebrow">01 / ${esc(c.nav[0].label)}</p><div class="approach"><h2 id="approach-title">${esc(c.approachLead)}</h2><div><p>${esc(c.approachBody)}</p><p class="approach-audience">${esc(c.audienceLine)}</p></div></div><div class="approach-cols"><div class="learn-col"><h3>${esc(c.learningTitle)}</h3><ol class="learning-grid">${c.learning.map(o => `<li>${esc(o)}</li>`).join('')}</ol></div><div class="practice-col"><h3 class="practice-title">${esc(c.practiceTitle)}</h3><p class="practice-intro">${esc(c.practiceIntro)}</p><div class="practice-grid">${c.examples.map(g => `<div class="practice-group"><p class="practice-label">${esc(g.group)}</p>${g.items.map(i => `<figure><button type="button" class="zoom" aria-label="Enlarge: ${esc(i.title)}"><img src="media/${esc(i.img)}.jpg" alt="${esc(i.alt)}" loading="lazy"></button><figcaption><strong>${esc(i.title)}</strong> ${esc(i.caption)}</figcaption></figure>`).join('')}</div>`).join('')}</div></div></div></div></section>
     <section class="section wrap" id="agenda" aria-labelledby="agenda-title"><div class="section-heading"><div><p class="eyebrow">02 / ${esc(c.nav[1].label)}</p><h2 id="agenda-title">${esc(c.agendaTitle)}</h2></div><button class="button button-outline print-button" hidden>${esc(c.print)} <span aria-hidden="true">↗</span></button></div><p class="section-intro">${esc(c.agendaIntro)}</p><p class="local-time">${esc(c.allTimes)}</p><noscript><p>${esc(c.noScript)}</p></noscript><div class="day-controls" role="group" aria-label="${esc(c.dayControls)}" hidden>${e.days.map((d,i) => `<button type="button" data-day="${d.id}" aria-controls="day-${d.id}" aria-pressed="${i === 0}">${esc(c.day)} ${d.id}<span>${esc(range(d))}</span></button>`).join('')}</div>${days}</section>
     <section class="section speakers-section" id="speakers" aria-labelledby="speakers-title"><div class="wrap"><p class="eyebrow">03 / ${esc(c.nav[2].label)}</p><h2 id="speakers-title">${esc(c.speakersTitle)}</h2><p class="section-intro">${esc(c.speakersIntro)}</p><div class="speaker-grid">${speakers.map(s => `<article class="speaker-card" id="speaker-${esc(s.id)}"><div class="portrait" aria-hidden="true">${esc(s.initials)}</div><p class="speaker-role">${esc(s.displayRole)}</p><h3>${esc(s.displayName)}</h3><p>${esc(s.bio)}</p>${badge(s.participationStatus)}</article>`).join('')}</div></div></section>
     <section class="section wrap event-details" id="details" aria-labelledby="details-title"><div><p class="eyebrow">04 / ${esc(c.nav[3].label)}</p><h2 id="details-title">${esc(c.detailsTitle)}</h2><p class="registration-note">${esc(c.registration)}</p></div><dl>${facts.map(([label,value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl></section>
@@ -89,6 +89,33 @@
   };
   window.addEventListener('hashchange', revealHash);
   revealHash();
+  const zooms = Array.from(document.querySelectorAll('.zoom'));
+  if (zooms.length) {
+    const box = document.createElement('dialog');
+    box.className = 'lightbox';
+    box.setAttribute('aria-label', 'Enlarged image');
+    box.innerHTML = '<button type="button" class="lb-close" aria-label="Close">×</button><button type="button" class="lb-nav lb-prev" aria-label="Previous image">‹</button><figure><img alt=""><figcaption><span class="lb-group"></span><strong></strong><span class="lb-text"></span><span class="lb-count"></span></figcaption></figure><button type="button" class="lb-nav lb-next" aria-label="Next image">›</button>';
+    document.body.appendChild(box);
+    const img = box.querySelector('img');
+    let at = 0;
+    const show = i => {
+      at = (i + zooms.length) % zooms.length;
+      const fig = zooms[at].closest('figure');
+      const src = zooms[at].querySelector('img');
+      img.src = src.getAttribute('src');
+      img.alt = src.alt;
+      box.querySelector('.lb-group').textContent = fig.closest('.practice-group').querySelector('.practice-label').textContent;
+      box.querySelector('strong').textContent = fig.querySelector('figcaption strong').textContent;
+      box.querySelector('.lb-text').textContent = fig.querySelector('figcaption').lastChild.textContent.trim();
+      box.querySelector('.lb-count').textContent = `${at + 1} / ${zooms.length}`;
+    };
+    zooms.forEach((z, i) => z.addEventListener('click', () => { show(i); box.showModal(); }));
+    box.querySelector('.lb-close').addEventListener('click', () => box.close());
+    box.querySelector('.lb-prev').addEventListener('click', () => show(at - 1));
+    box.querySelector('.lb-next').addEventListener('click', () => show(at + 1));
+    box.addEventListener('click', event => { if (event.target === box) box.close(); });
+    box.addEventListener('keydown', event => { if (event.key === 'ArrowLeft') show(at - 1); if (event.key === 'ArrowRight') show(at + 1); });
+  }
   const print = document.querySelector('.print-button');
   print.hidden = false;
   let previousDetails;
