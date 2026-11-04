@@ -3,7 +3,7 @@
 * { box-sizing: border-box; }
 body { margin: 0; color: #000; background: #fff; font: 10pt/1.45 Arial, sans-serif; }
 .skip-link, .site-nav, .site-header .btn, .site-footer, [data-page="home"], [data-page="details"],
-[data-page="speakers"], .tabbar, .agenda .actions, .toggle, .lightbox, .sponsors, .head-grid .lede { display: none !important; }
+[data-page="speakers"], [data-page="consulting"], .tabbar, .agenda .actions, .toggle, .lightbox, .sponsors, .head-grid .lede { display: none !important; }
 [data-page="agenda"], .day, .day[hidden] { display: block !important; }
 .site-header { margin-bottom: 4mm; }
 .brand { display: flex; gap: 3mm; align-items: baseline; color: #000; text-decoration: none; font-weight: bold; font-size: 14pt; }

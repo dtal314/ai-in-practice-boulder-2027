@@ -5,9 +5,10 @@
  * Authoring: `node app.js --refresh` rewrites the no-JavaScript snapshot in
  * index.html so the page reads fully without scripts (all views stacked).
  *
- * With JavaScript, the page behaves as four views selected by the hash:
+ * With JavaScript, the page behaves as five views selected by the hash:
  *   home (#, #learn, #theme-*)  agenda (#agenda, #S01…)
  *   speakers (#speakers, #speaker-*)  details (#details, #faq, #hotels)
+ *   consulting (#consulting, #services)
  */
 (function () {
   'use strict';
@@ -55,6 +56,7 @@
         <a href="#agenda" data-nav="agenda">Agenda</a>
         <a href="#speakers" data-nav="speakers">Speakers</a>
         <a href="#details" data-nav="details">Details</a>
+        <a href="#consulting" data-nav="consulting">Consulting</a>
       </nav>
       ${reserve('btn btn-accent btn-sm')}
     </div>
@@ -260,6 +262,47 @@
     </div>
   </section>`;
 
+  const C = E.consulting;
+  const consulting = `
+  <section id="consulting" class="consult-intro wrap section-pad" aria-labelledby="consulting-title">
+    <div class="stack-14">
+      <p class="eyebrow">${esc(C.eyebrow)}</p>
+      <h2 id="consulting-title" class="h2 h2-xl">${esc(C.title)}</h2>
+      <p class="consult-sub">${esc(C.subtitle)}</p>
+    </div>
+    <div class="consult-body">${C.body.map(p => `<p>${esc(p)}</p>`).join('')}</div>
+  </section>
+  <section id="services" class="learn" aria-labelledby="services-title">
+    <div class="wrap learn-inner">
+      <div class="stack-14">
+        <p class="eyebrow eyebrow-teal">Services</p>
+        <h2 id="services-title" class="h2 h2-light">What we provide.</h2>
+      </div>
+      <ol class="themes">
+        ${C.services.map((s, i) => `
+        <li class="theme">
+          <div class="theme-head"><span class="theme-num">${String(i + 1).padStart(2, '0')}</span><h3>${esc(s.name)}</h3></div>
+          <ul class="service-items">${s.items.map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+        </li>`).join('')}
+      </ol>
+    </div>
+  </section>${C.contactEmail ? `
+  <section id="consulting-contact" class="cream" aria-labelledby="contact-title">
+    <div class="wrap section-pad consult-contact">
+      <div class="stack-14">
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title" class="h2">Talk to us.</h2>
+        <div class="actions"><a class="btn btn-outline" href="mailto:${attr(C.contactEmail)}">Or email us directly</a></div>
+      </div>
+      <form class="contact-form" action="mailto:${attr(C.contactEmail)}" method="post" enctype="text/plain">
+        <label>Name<input name="name" type="text" autocomplete="name" required></label>
+        <label>Firm<input name="firm" type="text" autocomplete="organization"></label>
+        <label>Message<textarea name="message" rows="5" required></textarea></label>
+        <div class="actions"><button class="btn btn-accent" type="submit">Send</button></div>
+      </form>
+    </div>
+  </section>` : ''}`;
+
   const sp = E.sponsors;
   const sponsorTile = s => {
     const inner = s.logo ? `<img src="${attr(s.logo)}" alt="${attr(s.name)}" loading="lazy">` : `<span>${esc(s.name)}</span>`;
@@ -283,6 +326,7 @@
       <nav aria-label="Footer">
         <a href="#agenda">Agenda</a>
         <a href="#details">Details</a>
+        <a href="#consulting">Consulting</a>
         <a class="footer-cta" href="${attr(REG)}" data-link="registration">Reserve your spot →</a>
       </nav>
     </div>
@@ -295,6 +339,7 @@ ${header}
   <div data-page="agenda">${agenda}</div>
   <div data-page="details">${details}</div>
   <div data-page="speakers">${speakers}</div>
+  <div data-page="consulting">${consulting}</div>
 </main>
 ${sponsors}
 ${footer}`;
@@ -368,6 +413,8 @@ ${footer}`;
     if (/^speaker-/.test(id)) return { page: 'speakers', target: id };
     if (id === 'details') return { page: 'details', target: null };
     if (id === 'faq' || id === 'hotels') return { page: 'details', target: id };
+    if (id === 'consulting') return { page: 'consulting', target: null };
+    if (id === 'services' || id === 'consulting-contact') return { page: 'consulting', target: id };
     return { page: 'home', target: document.getElementById(id) ? id : null };
   };
 
@@ -421,6 +468,17 @@ ${footer}`;
 
     const zoom = e.target.closest('.zoom');
     if (zoom) openLightbox(zoom.dataset.img);
+  });
+
+  /* Consulting form: open the visitor's email app with the message filled in. */
+  const contactForm = $('.contact-form');
+  if (contactForm) contactForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const f = new FormData(contactForm);
+    const name = f.get('name'), firm = f.get('firm');
+    const subject = `AI consultancy inquiry from ${name}${firm ? `, ${firm}` : ''}`;
+    const body = `${f.get('message')}\n\n${name}${firm ? `\n${firm}` : ''}`;
+    location.href = `mailto:${C.contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 
   /* Arrow keys move between day tabs. */

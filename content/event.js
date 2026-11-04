@@ -73,6 +73,31 @@ window.CONF.event = {
     ['Capacity', 'Limited to 100 attendees'],
   ],
 
+  /* Consulting page. Services come from the two-day workshop proposal.
+   * contactEmail: while null, the contact section does not appear. Set it to
+   * an address and the form and "Or email us directly" button show up. */
+  consulting: {
+    eyebrow: 'Consulting · Daniel Tal and Jenn Becker',
+    title: 'Put AI to work on real projects.',
+    subtitle: 'AI consultancy for architecture, engineering & construction firms.',
+    body: [
+      'Give participants practical experience using AI for research, writing, visualization, and design workflows, along with a clear approach to evaluating results and introducing AI into their practice.',
+      'Short demonstrations followed by guided hands-on practice and discussion.',
+    ],
+    contactEmail: null,
+    services: [
+      { name: 'AI in the firm', items: ['What we do with AI', 'How AI use in your firm affects labor, fees, and scope', 'Firm policy on AI'] },
+      { name: 'Large Language Model (LLM) basics', items: ['Brief history of (recent) AI: how and why it started', 'Which and why: ChatGPT, Claude, Gemini, Grok, Meta', 'Claude Code and ChatGPT Codex on the local desktop'] },
+      { name: 'Prompting', items: ['Fundamentals of prompting', 'Subvocalization technology', 'Using AI to prompt AI', 'Deep searches and research', 'Generative AI for all things written', 'Generative prompting for images', 'Generative prompting for modeling', 'Iterative prompting'] },
+      { name: 'Combined AI workflow', items: ['Using multiple LLMs in one process', 'Proposal writing', 'Presentations with PowerPoint', 'Creating videos', 'Getting creative and expanding to other areas'] },
+      { name: 'Generative AI for rendering', items: ['Creating renders: best practices', 'Which LLM for what: Gemini or ChatGPT', 'SketchUp AI Render'] },
+      { name: 'Generative AI for 3D modeling', items: ['Charrette extension for SketchUp, Revit, and Rhino', '3D modeling process', 'How to iterate a 3D model with AI', 'How to feed it information', 'Using screenshots and correct prompting'] },
+      { name: 'Tokens', items: ['Understanding AI costs', 'How that impacts operations', 'How that impacts R&D', 'What to expect'] },
+      { name: 'R&D for your firm', items: ['Initial costs', 'AI R&D approach', 'Identifying or hiring the AI lead', 'Initial ROR: adjusting thinking, it’s not about ROR', 'Keeping track of news: subscribe and follow'] },
+      { name: 'Advanced AI skills', items: ['Using Claude Code and ChatGPT Codex', 'Understanding the environment', 'Prototyping', 'Websites', 'Software apps', 'Research and outlines', 'Databases', 'Day-to-day customization'] },
+    ],
+  },
+
   /* Sponsors band, shown above the footer on every view. Replace each
    * placeholder with the sponsor's name, logo file, and website, e.g.
    *   { name: 'Acme Studio', logo: 'media/sponsors/acme.png', href: 'https://acme.example' }
