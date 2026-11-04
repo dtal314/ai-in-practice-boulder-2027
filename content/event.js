@@ -84,7 +84,7 @@ window.CONF.event = {
       'Give participants practical experience using AI for research, writing, visualization, and design workflows, along with a clear approach to evaluating results and introducing AI into their practice.',
       'Short demonstrations followed by guided hands-on practice and discussion.',
     ],
-    contactEmail: null,
+    contactEmail: 'nancytrigg@gmail.com',
     services: [
       { name: 'AI in the firm', items: ['What we do with AI', 'How AI use in your firm affects labor, fees, and scope', 'Firm policy on AI'] },
       { name: 'Large Language Model (LLM) basics', items: ['Brief history of (recent) AI: how and why it started', 'Which and why: ChatGPT, Claude, Gemini, Grok, Meta', 'Claude Code and ChatGPT Codex on the local desktop'] },
