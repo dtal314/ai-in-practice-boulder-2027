@@ -33,12 +33,12 @@
   const SESSIONS = {};
   DAYS.forEach((d, di) => d.rows.forEach(r => { if (r.id) SESSIONS[r.id] = { ...r, day: di, dayLabel: d.label }; }));
   const sessionsOf = s => Object.values(SESSIONS).filter(x => x.lead.includes(s.match));
-  const REG = E.registrationUrl || '#details';
+  const SIGNUP = E.signup;
   const TBA = 'To be announced';
 
   /* ---------- small pieces ---------- */
   const brand = (accent) => `${esc(E.titleLead)}<span style="color:${accent}">${esc(E.titleAccent)}</span>${esc(E.titleTail)}`;
-  const reserve = (cls = 'btn btn-accent') => `<a class="${cls}" href="${attr(REG)}" data-link="registration">Reserve your spot</a>`;
+  const reserve = (cls = 'btn btn-accent') => `<a class="${cls}" href="#signup" data-link="signup">${esc(SIGNUP.button)}</a>`;
   const imgButton = (key, cls) => {
     const i = E.images[key];
     return `<button type="button" class="zoom ${cls}" data-img="${attr(key)}" aria-label="Enlarge: ${attr(i.title)}"><img src="media/${attr(i.f)}" alt="${attr(i.alt)}"${cls === 'zoom-main' ? '' : ' loading="lazy"'}></button>`;
@@ -125,6 +125,28 @@
           <span class="face-text"><span class="face-name">${esc(p.name)}</span><span class="face-role">${esc(p.title)}</span></span>
         </a></li>`).join('')}
       </ul>
+    </div>
+  </section>`;
+
+  const signup = `
+  <section id="signup" class="signup" aria-labelledby="signup-title">
+    <div class="wrap section-pad signup-inner">
+      <div class="stack-14">
+        <p class="eyebrow">${esc(SIGNUP.eyebrow)}</p>
+        <h2 id="signup-title" class="h2">${esc(SIGNUP.title)}</h2>
+        <p class="lede">${esc(SIGNUP.body)}</p>
+      </div>
+      <form class="signup-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="${attr(SIGNUP.accessKey)}">
+        <input type="hidden" name="subject" value="Event updates signup: ${attr(E.title)}, ${attr(E.city)} ${E.year}">
+        <input type="hidden" name="from_name" value="${attr(E.title)} website">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label>Name<input name="name" type="text" autocomplete="name" required></label>
+        <label>Company<input name="company" type="text" autocomplete="organization" required></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        <div class="actions"><button class="btn btn-accent" type="submit">${esc(SIGNUP.submit)}</button></div>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>`;
 
@@ -327,7 +349,7 @@
         <a href="#agenda">Agenda</a>
         <a href="#details">Details</a>
         <a href="#consulting">Consulting</a>
-        <a class="footer-cta" href="${attr(REG)}" data-link="registration">Reserve your spot →</a>
+        <a class="footer-cta" href="#signup" data-link="signup">${esc(SIGNUP.button)} →</a>
       </nav>
     </div>
   </footer>`;
@@ -335,7 +357,7 @@
   const html = `<a class="skip-link" href="#main">Skip to content</a>
 ${header}
 <main id="main" tabindex="-1">
-  <div data-page="home" id="top">${hero}${learn}${speakersPreview}</div>
+  <div data-page="home" id="top">${hero}${learn}${speakersPreview}${signup}</div>
   <div data-page="agenda">${agenda}</div>
   <div data-page="details">${details}</div>
   <div data-page="speakers">${speakers}</div>
@@ -405,7 +427,7 @@ ${footer}`;
     const id = decodeURIComponent((hash || '').replace(/^#\/?/, ''));
     if (!id || id === 'top') return { page: 'home', target: null };
     if (id === 'approach' || id === 'learn') return { page: 'home', target: 'learn' };
-    if (/^theme-/.test(id) || id === 'speakers-preview') return { page: 'home', target: id };
+    if (/^theme-/.test(id) || id === 'speakers-preview' || id === 'signup') return { page: 'home', target: id };
     if (id === 'agenda') return { page: 'agenda', target: null };
     const sid = id.replace(/^session-/, '');
     if (SESSIONS[sid]) return { page: 'agenda', target: sid, session: sid };
@@ -479,6 +501,32 @@ ${footer}`;
     const subject = `AI consultancy inquiry from ${name}${firm ? `, ${firm}` : ''}`;
     const body = `${f.get('message')}\n\n${name}${firm ? `\n${firm}` : ''}`;
     location.href = `mailto:${C.contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+
+  /* Event-updates form: send to Web3Forms in the background and confirm
+   * on the page. Without JavaScript the form posts normally and Web3Forms
+   * shows its own thank-you page. */
+  const signupForm = $('.signup-form');
+  if (signupForm) signupForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const status = signupForm.querySelector('.form-status');
+    const button = signupForm.querySelector('button[type="submit"]');
+    status.classList.remove('ok', 'err');
+    status.textContent = 'Sending…';
+    button.disabled = true;
+    try {
+      const res = await fetch(signupForm.action, { method: 'POST', body: new FormData(signupForm), headers: { Accept: 'application/json' } });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.message || 'Request failed');
+      signupForm.reset();
+      status.textContent = SIGNUP.success;
+      status.classList.add('ok');
+    } catch (err) {
+      status.textContent = SIGNUP.error;
+      status.classList.add('err');
+    } finally {
+      button.disabled = false;
+    }
   });
 
   /* Arrow keys move between day tabs. */
