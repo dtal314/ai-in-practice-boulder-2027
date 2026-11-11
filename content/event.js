@@ -17,7 +17,7 @@ window.CONF.event = {
    * never appears on the site, only this public access key does. Get a key
    * for the inbox at https://web3forms.com (free, no account needed). */
   signup: {
-    accessKey: 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY',
+    accessKey: '10c50646-213c-4f66-b2a7-760293a074ac',
     eyebrow: 'Stay in the loop',
     title: 'Sign up for event updates.',
     body: 'Be the first to hear when dates, venue, ticket pricing, and speakers are confirmed. A few emails a year, and you can unsubscribe any time.',
