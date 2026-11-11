@@ -9,13 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap">
-  <link rel="stylesheet" href="styles/site.css?v=20261104b" media="screen">
-  <link rel="stylesheet" href="styles/print.css?v=20261104b" media="print">
-  <script defer src="content/event.js?v=20261104b"></script>
-  <script defer src="content/speakers.js?v=20261104b"></script>
-  <script defer src="content/sessions.js?v=20261104b"></script>
-  <script defer src="content/faqs.js?v=20261104b"></script>
-  <script defer src="app.js?v=20261104b"></script>
+  <link rel="stylesheet" href="styles/site.css?v=20261111" media="screen">
+  <link rel="stylesheet" href="styles/print.css?v=20261111" media="print">
+  <script defer src="content/event.js?v=20261111"></script>
+  <script defer src="content/speakers.js?v=20261111"></script>
+  <script defer src="content/sessions.js?v=20261111"></script>
+  <script defer src="content/faqs.js?v=20261111"></script>
+  <script defer src="app.js?v=20261111"></script>
 </head>
 <body>
   <div id="site">
@@ -32,7 +32,7 @@
         <a href="#details" data-nav="details">Details</a>
         <a href="#consulting" data-nav="consulting">Consulting</a>
       </nav>
-      <a class="btn btn-accent btn-sm" href="#details" data-link="registration">Reserve your spot</a>
+      <a class="btn btn-accent btn-sm" href="#signup" data-link="signup">Sign up for event updates</a>
     </div>
   </header>
 <main id="main" tabindex="-1">
@@ -47,7 +47,7 @@
       <p class="hero-sub">From your first prompt to your firm’s next workflow.</p>
       <p class="hero-body">Two days of practical AI learning for design professionals and the people who lead them. Daniel Tal, Jenn Becker, and guest presenters take you from your first prompt to a plan for your firm, using real project examples throughout.</p>
       <div class="actions">
-        <a class="btn btn-accent" href="#details" data-link="registration">Reserve your spot</a>
+        <a class="btn btn-accent" href="#signup" data-link="signup">Sign up for event updates</a>
         <a class="btn btn-navy" href="#learn">See what you’ll learn</a>
         <a class="btn btn-outline" href="#agenda">View the agenda</a>
       </div>
@@ -131,6 +131,26 @@
           <span class="face-text"><span class="face-name">Justin Gies</span><span class="face-role">Guest speaker</span></span>
         </a></li>
       </ul>
+    </div>
+  </section>
+  <section id="signup" class="signup" aria-labelledby="signup-title">
+    <div class="wrap section-pad signup-inner">
+      <div class="stack-14">
+        <p class="eyebrow">Stay in the loop</p>
+        <h2 id="signup-title" class="h2">Sign up for event updates.</h2>
+        <p class="lede">Be the first to hear when dates, venue, ticket pricing, and speakers are confirmed. A few emails a year, and you can unsubscribe any time.</p>
+      </div>
+      <form class="signup-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="Event updates signup: AI in Your Practice, Boulder 2027">
+        <input type="hidden" name="from_name" value="AI in Your Practice website">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label>Name<input name="name" type="text" autocomplete="name" required></label>
+        <label>Company<input name="company" type="text" autocomplete="organization" required></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        <div class="actions"><button class="btn btn-accent" type="submit">Sign me up</button></div>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section></div>
   <div data-page="agenda">
@@ -365,7 +385,7 @@
     </li></ol>
         <div class="actions">
           <button type="button" class="btn btn-outline js-only" data-day="1" data-scroll="agenda" hidden>Continue to Day 2 →</button>
-          <a class="btn btn-accent" href="#details" data-link="registration">Reserve your spot</a>
+          <a class="btn btn-accent" href="#signup" data-link="signup">Sign up for event updates</a>
         </div>
       </div>
       <div class="day" id="day-2" aria-labelledby="day-title-1">
@@ -464,7 +484,7 @@
     </li></ol>
         <div class="actions">
           <button type="button" class="btn btn-outline js-only" data-day="0" data-scroll="agenda" hidden>← Back to Day 1</button>
-          <a class="btn btn-accent" href="#details" data-link="registration">Reserve your spot</a>
+          <a class="btn btn-accent" href="#signup" data-link="signup">Sign up for event updates</a>
         </div>
       </div>
     </div>
@@ -474,7 +494,7 @@
     <div class="stack-14">
       <p class="eyebrow">Details · Boulder 2027</p>
       <h2 id="details-title" class="h2">Plan your time in Boulder.</h2>
-      <div class="actions"><a class="btn btn-accent" href="#details" data-link="registration">Reserve your spot</a></div>
+      <div class="actions"><a class="btn btn-accent" href="#signup" data-link="signup">Sign up for event updates</a></div>
     </div>
     <div class="details-grid">
       <dl class="facts">
@@ -653,7 +673,7 @@
         <a href="#agenda">Agenda</a>
         <a href="#details">Details</a>
         <a href="#consulting">Consulting</a>
-        <a class="footer-cta" href="#details" data-link="registration">Reserve your spot →</a>
+        <a class="footer-cta" href="#signup" data-link="signup">Sign up for event updates →</a>
       </nav>
     </div>
   </footer>
