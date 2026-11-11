@@ -11,9 +11,21 @@ window.CONF.event = {
   city: 'Boulder',
   year: 2027,
 
-  /* Set to the registration page URL when it exists. While null, every
-   * "Reserve your spot" button goes to the Details page. */
-  registrationUrl: null,
+  /* Event-updates signup. Every "Sign up for event updates" button goes to
+   * the signup form on the home page. The form posts to Web3Forms, which
+   * forwards each submission to the organizer's inbox; the inbox address
+   * never appears on the site, only this public access key does. Get a key
+   * for the inbox at https://web3forms.com (free, no account needed). */
+  signup: {
+    accessKey: 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY',
+    eyebrow: 'Stay in the loop',
+    title: 'Sign up for event updates.',
+    body: 'Be the first to hear when dates, venue, ticket pricing, and speakers are confirmed. A few emails a year, and you can unsubscribe any time.',
+    button: 'Sign up for event updates',
+    submit: 'Sign me up',
+    success: 'Thanks. You are on the list for event updates.',
+    error: 'Something went wrong. Please try again in a moment.',
+  },
 
   /* Design options. */
   colorCoding: true,          // color each skill theme through the agenda
